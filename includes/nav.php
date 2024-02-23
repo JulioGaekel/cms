@@ -16,15 +16,20 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
+                <?php
+                $query = "SELECT * FROM categories";
+                $selectAllCategoryQuery = mysqli_query($connection, $query);
+
+                /*Display database categories on website with a while-loop. Modifications in db will be displayed
+                automatically because of the loop.*/
+                while($row = mysqli_fetch_assoc($selectAllCategoryQuery)) {
+                    $catTitle = $row['cat_title'];
+
+                    echo "<li><a href='#'>{$catTitle}</a></li>";
+                }
+                ?>
+
+
             </ul>
         </div>
         <!-- /.navbar-collapse -->
