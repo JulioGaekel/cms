@@ -15,7 +15,7 @@
 
             <?php
 
-            // TODO: Fix search query, search result is not showing single result. Tested with tags....
+            // TODO: Fix search query, search result is not showing single result. Tested with tags
             if (isset($_POST['submit'])) {
                 $search = $_POST['search'];
 
